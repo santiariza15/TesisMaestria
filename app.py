@@ -21,7 +21,7 @@ def cnn(image):
     result = loaded_model.predict(test_image)
     return 'Neumonia' if result[0][0] == 1 else 'Sano'
 
-file = st.file_uploader("Suba una imagen de rayos X en el pecho",type=['png','jpeg'])
+file = st.file_uploader("Suba una imagen de rayos X en el pecho",type=['png','jpeg','jpg'])
 if file is not None:
     st.image(file, width=400)
     result = cnn(file)
