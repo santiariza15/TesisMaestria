@@ -23,6 +23,7 @@ def cnn(image):
 
 file = st.file_uploader("Suba una imagen de rayos X en el pecho",type=['png','jpeg','jpg'])
 if file is not None:
-    st.image(file, width=400)
+    with st.container():
+        st.image(file)
     result = cnn(file)
     st.subheader(f"Diagnostico: {result}")
